@@ -1,0 +1,73 @@
+<div class="main-wrapper">
+    <div class="login-register-area section-space-y-axis-100">
+        <main class="main-content">
+            <div class="breadcrumb-area breadcrumb-height" data-bg-image="/user/images/breadcrumb/bg/1-1-1919x388.jpg">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-item">
+                                <h2 class="breadcrumb-heading">Login Form</h2>
+                                <ul>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>Login Form</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 pt-5 pt-lg- mt-3 mx-auto">
+                        <form action="/user-login" method="post">
+                        
+                            {{!-- <div id="myalert" class="alert alert-success" role="alert">
+                             successfully Registered!!
+                            </div> --}}
+                            
+                            <p>{{loginError}}</p>
+                            <div class="login-form">
+                                <h4 class="login-title">Login Form</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <span id="email-fail" style="color: red;"></span>
+                                        <input type="email" name="email" required="" placeholder="Email Address"
+                                            id="contact-emaill" onkeyup="validateemaill()">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span id="password-fail" style="color: red;"></span>
+                                        <input type="password" name="password" required="" placeholder="Password"
+                                            id="contact-passwordd" onkeyup="validatePasswordd()">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="check-box">
+                                            <input type="checkbox" id="remember_me">
+                                            <label for="remember_me">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pt-1 mt-md-0">
+                                        <div class="forgotton-password_info">
+                                            <a href="#"> Forgotten pasword?</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pt-1 mt-x`md-0">
+                                        <div class="forgotton-password_info">
+                                            <span> Create a new account? <a href="/user-signup">Signup here</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 pt-5">
+                                        <button type="submit" onkeyup="validatelogin()" onclick="return validateform()"
+                                            class="btn btn-custom-size lg-size btn-pronia-primary">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

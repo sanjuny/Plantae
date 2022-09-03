@@ -1,0 +1,78 @@
+{{!-- <div class="content-page"> --}}
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="page-content-wrapper ">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row" style="justify-content:space-between ;">
+                                    <h4 class="mt-0 header-title">Product Management</h4>
+                                    <a href="/admin/add-products"
+                                        class="btn btn-gradient-primary waves-effect waves-light mt--38px mb-20px"
+                                        style="float:right;"><i class="mdi mdi-account mr-2"></i>Add Product</a>
+
+                                </div>
+
+                                <table id="datatable-buttons"
+                                    class="table table-striped table-bordered dt-responsive nowrap"
+                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>description</th>
+                                            <th>image</th>
+                                            <th>image hover</th>
+                                            <th style="text-align:center ;">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each products}}
+                                        <tr>
+                                            <td>{{@index}}</td>
+                                            <td>{{this.Name}}</td>
+                                            <td>{{this.me.category}}</td>
+                                            <td>₹{{this.Price}}</td>
+                                            <td class="text-truncate" style="max-width:150px ;">{{this.Description}}
+                                            </td>
+                                            <td><img style="width:50px ; height:50px"
+                                                    src="/admin/images/{{this.image.[0]}}" alt="picture"></td>
+                                            <td><img style="width:50px ; height:50px"
+                                                    src="/admin/images/{{this.image.[1]}}" alt="picture"></td>
+                                            <td>
+                                                <a href="/admin/update-banner/{{this._id}}"
+                                                    class="btn btn-outline-info btn-round waves-effect waves-light"><i
+                                                        class="mdi mdi-send mr-2"></i>Edit</a>
+                                                <a href="/admin/delete-banner/{{this._id}}"
+                                                    class="btn btn-outline-danger btn-round waves-effect waves-light"
+                                                    onclick="return confirm('Are you want to delete {{this.Name}}?')"><i
+                                                        class="mdi mdi-power mr-2"></i>Delete</a>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->
+    </div> <!-- content -->
+
+    {{!--
+</div> --}}
+<!-- End Right content here -->
+{{!-- </div>
+<!-- END wrapper --> --}}

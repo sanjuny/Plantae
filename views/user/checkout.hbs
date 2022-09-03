@@ -1,0 +1,357 @@
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="/user/images/breadcrumb/bg/1-1-1919x388.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">Checkout Page</h2>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="checkout-area section-space-y-axis-100">
+        <div class="container">
+            {{!-- <form action="/checkout-page" method="post"> --}}
+
+                <div class="row">
+                    <h3>Billing Details</h3>
+                    <div class="col-lg-6 col-12 mb-5">
+                        <div class="checkbox-form">
+                            <form class="checkout" id="addAddress" action="/addaddresscheck" method="post">
+
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                                Add New Address
+                                            </button>
+                                        </h2>
+                                        <hr>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label> Name <span class="required">*</span></label>
+                                                            <input placeholder="" type="text" name="name" required>
+                                                        </div>
+                                                    </div>
+                                                    {{!-- <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label>Last Name <span class="required">*</span></label>
+                                                            <input placeholder="" type="text" name="lastname" required>
+                                                        </div>
+                                                    </div> --}}
+
+                                                    <div class="col-md-12">
+                                                        <div class="checkout-form-list">
+                                                            <label>Address <span class="required">*</span></label>
+                                                            <input placeholder="Street address" type="text"
+                                                                name="Address" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="checkout-form-list">
+                                                            <label>Town / City <span class="required">*</span></label>
+                                                            <input type="text" name="City" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label>State / County <span
+                                                                    class="required">*</span></label>
+                                                            <input placeholder="" type="text" name="State" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label>Postcode <span class="required">*</span></label>
+                                                            <input type="number" name="Postcode" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label>Email Address <span class="required">*</span></label>
+                                                            <input placeholder="" type="email" name="email" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="checkout-form-list">
+                                                            <label>Phone <span class="required">*</span></label>
+                                                            <input type="number" name="number" required>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" name="userId" id="" value="{{userinfo._id}}"
+                                                            hidden>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" style="width:100%;"
+                                                class="btn btn-success">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <form class="" id="booking_form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="userId" id="userId" value="{{Useraddress.[0].user}}" hidden>
+                                {{!-- <input type="text" name="userId" id="userId" value="{{Useraddress.[0].user}}"
+                                    hidden>
+                                --}}
+
+                                {{#each Useraddress}}
+                                <div class="card">
+                                    <div class="card-header">
+                                        <input class="form-check-input" type="radio" id="radioNoLabel1" name="addressId"
+                                            value="{{this._id}}" aria-label="...">
+                                        {{address.name}},{{address.number}}
+                                    </div>
+                                    <div class="card-body">
+                                        <p>{{address.Address}},{{address.Postcode}}<br>{{address.City}},{{address.State}}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <div class="your-order">
+                                    <h3>Your order</h3>
+                                    <div class="your-order-table table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cart-product-name">Product</th>
+                                                    <th class="cart-product-total">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each products}}
+                                                <tr class="cart_item">
+                                                    <td class="cart-product-name">{{this.product.Name}}<strong
+                                                            class="product-quantity">x{{this.quantity}}</strong></td>
+                                                    <td class="cart-product-total"><span class="amount"
+                                                            id="a{{this.product._id}}">₹{{this.subtotal}}</span></td>
+                                                </tr>
+
+                                                {{/each}}
+                                            </tbody>
+                                            <tfoot>
+                                                {{!-- <tr class="cart-subtotal">
+                                                    <th>Cart Subtotal</th>
+                                                    <td><span class="amount">$215.00</span></td>
+                                                </tr> --}}
+                                                <tr class="order-total">
+                                                    <th>Order Total</th>
+                                                    <td><strong><span class="amount">₹{{total}}</span></strong></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="payment-method">
+                                        <div class="payment-accordion">
+                                            <div id="accordion">
+                                                <div class="card">
+                                                    <div class="card-header" id="#payment-1">
+                                                        <h5 class="panel-title">
+                                                            <input type="radio" name="payment-method" value="paypal">
+                                                            payPal
+
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseOne" class="collapse show"
+                                                        data-bs-parent="#accordion">
+                                                        <div class="card-body">
+                                                            <p>Make your payment directly into our bank account. Please
+                                                                use
+                                                                your
+                                                                Order
+                                                                ID as the payment
+                                                                reference. Your order won’t be shipped until the funds
+                                                                have
+                                                                cleared
+                                                                in
+                                                                our account.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-header" id="#payment-2">
+                                                        <h5 class="panel-title">
+                                                            <input type="radio" name="payment-method" value="COD"
+                                                                checked>Cash
+                                                            On Delivery
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                                                        <div class="card-body">
+                                                            <p>Make your payment directly into our bank account. Please
+                                                                use
+                                                                your
+                                                                Order
+                                                                ID as the payment
+                                                                reference. Your order won’t be shipped until the funds
+                                                                have
+                                                                cleared
+                                                                in
+                                                                our account.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-header" id="#payment-3">
+                                                        <h5 class="panel-title">
+                                                            <input type="radio" name="payment-method" value="razorpay">
+                                                            RazorPay
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseThree" class="collapse"
+                                                        data-bs-parent="#accordion">
+                                                        <div class="card-body">
+                                                            <p>Make your payment directly into our bank account. Please
+                                                                use
+                                                                your
+                                                                Order
+                                                                ID as the payment
+                                                                reference. Your order won’t be shipped until the funds
+                                                                have
+                                                                cleared
+                                                                in
+                                                                our account.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" style="width:100%;"
+                                                class="btn btn-outline-success">Place
+                                                Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+        </div>
+</main>
+
+<script>
+
+
+
+    $("#booking_form").submit((e) => {
+        e.preventDefault()
+        console.log('checkOutPage')
+        $.ajax({
+            url: '/checkout',
+            method: 'post',
+            data: $('#booking_form').serialize(),
+            success: (response) => {
+                alert(response)
+                if (response.codSuccess) {
+                    swal({
+                        title: "Congrats",
+                        text: "Your order is placed",
+                        icon: "success",
+                        button: "order",
+                    }).then(() => {
+                        location.href = '/my-order'
+                    })
+
+                } else if (response.razorpay) {
+                    console.log("razorpay response")
+                    razorpayPayment(response)
+                } else if (response.payPal) {
+                    for (let i = 0; i < response.links.length; i++) {
+                        if (response.links[i].rel === "approval_url") {
+                            location.href = response.links[i].href;
+                        }
+                    }
+
+                }
+
+            }
+
+        })
+    })
+
+    function razorpayPayment(order) {
+
+        var options = {
+            "key": "rzp_test_uIX799wb8OXfGe", // Enter the Key ID generated from the Dashboard
+            "amount": order.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Plantae",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+
+
+                verifyPayment(response, order)
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+
+    }
+
+    function verifyPayment(payment, order) {
+        console.log("hiii")
+        $.ajax({
+            url: '/verify-payment',
+            data: {
+                payment,
+                order
+            },
+            method: 'post',
+            success: (response) => {
+                swal({
+                    title: "Order Placed",
+                    text: "Redirecting...",
+                    icon: "Payment success",
+                    buttons: false,
+                });
+                location.href = '/my-order'
+            }
+
+        })
+    }
+
+
+
+</script>

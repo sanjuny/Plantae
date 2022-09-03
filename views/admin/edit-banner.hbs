@@ -1,0 +1,79 @@
+<!-- Start right Content here -->
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title"></h4>
+                    <h4>Edit Banner</h4>
+
+                    <div class="general-label">
+                        <form action="/admin/edit-banner/{{banner._id}}" method="POST" class="form-horizontal"
+                            enctype="multipart/form-data">
+                            <div class="form-group row">
+
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <span class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">Name</button>
+
+                                        </span>
+                                        <input type="text" id="example-input1-group2" name="Name" class="form-control"
+                                            value="{{banner.Name}}">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <span class="input-group-prepend">
+                                            <button type="form" class="btn btn-primary">Description</button>
+                                        </span>
+                                        <input type="text" id="example-input3-group2" name="Description"
+                                            class="form-control" value="{{banner.Description}}">
+                                        <span class="input-group-append">
+
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <div><img src="/admin/images/{{banner.image}}" alt="ivde unde"
+                                            style="width:50px ; height:auto" id="imgview">
+                                    </div>
+                                    <div class="input-group mt-2">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input"
+                                                id="inputGroupFile04" onchange="viewimg(event)" multiple>
+                                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+
+
+
+
+                                        </div>
+                                        <div class="input-group-append">
+                                        </div>
+                                    </div>
+                                    <button style="width:200px ;" class="btn btn-outline-primary mt-3"
+                                        type="submit">Update</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Right content here -->
+<script>
+    function viewimg(event) {
+        document.getElementById('imgview').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

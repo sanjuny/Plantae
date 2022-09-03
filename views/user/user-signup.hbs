@@ -1,0 +1,73 @@
+<div class="main-wrapper">
+    <div class="login-register-area section-space-y-axis-100">
+        <main class="main-content">
+            <div class="breadcrumb-area breadcrumb-height" data-bg-image="/user/images/breadcrumb/bg/1-1-1919x388.jpg">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-item">
+                                <h2 class="breadcrumb-heading">Login & Register Page</h2>
+                                <ul>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>Login | Register</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 pt-5 pt-lg- mt-3 mx-auto">
+                        <form action="/user-signup" method="post">
+                        <p>{{signupError}}</p>
+                            <div class="login-form">
+                                <h4 class="login-title">Register</h4>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        {{!-- <label>First Name</label> --}}
+                                        <span id="name-error" style="color:red ;"></span>
+                                        <input name="name" type="text" required="" placeholder="First Name" id="contact-name"
+                                            onkeyup="validateName()">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        {{!-- <label>Phone Number</label> --}}
+                                        <span id="number-error" style="color: red;"></span>
+                                        <input name="phonenumber" type="number" required="" placeholder="Phone number"
+                                            id="contact-phone" onkeyup="validatePhone()">
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{!-- <label>Email Address*</label> --}}
+                                        <span id="email-error" style="color: red;"></span>
+                                        <input name="email" type="email" required="" placeholder="Email Address" id="contact-email"
+                                            onkeyup="validateemail()">
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{!-- <label>Password</label> --}}
+                                        <span id="password-error" style="color: red;"></span>
+                                        <input name="password" type="password" required="" placeholder="Password"
+                                            id="contact-password" onkeyup="validatePassword()">
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{!-- <label>Confirm Password</label> --}}
+                                        <input type="password" required="" placeholder="Confirm Password" id="Confirm-Password">
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="text-danger" id="submit-error"></span>
+                                        <button type="submit" onkeyup="validateConfirmPassword()"
+                                            onclick="return validatesubmit()"
+                                            class="btn btn-custom-size lg-size btn-pronia-primary">Register</button>
+                                    </div>
+                                    <span> Already have an account? <a href="/user-login">login here</a></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<!-- Start right Content here -->
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title"></h4>
+                    <h4>Edit Products</h4>
+
+                    <div class="general-label">
+                        <form action="/admin/update-product/{{products._id}}" method="POST" class="form-horizontal"
+                            enctype="multipart/form-data">
+                            <div class="form-group row">
+
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <span class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">Name</button>
+
+                                        </span>
+                                        <input type="text" id="example-input1-group2" name="Name" class="form-control"
+                                            value="{{products.Name}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <button class="btn btn-primary" type="button">Category</button>
+                                        <select name="category" class="select2 form-control mb-3 custom-select"
+                                        
+                                            style="width: 100%; height:36px;">
+                                            <option hidden selected value="{{products.category}}">{{getSingleCategory.category}}</option>
+                                            {{#each category}}
+                                            <option name="category" value="{{this._id}}">{{this.category}}</option>
+                                            {{/each}}
+
+                                        </select>
+
+                                        <span class="input-group-append">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <button type="button" class="btn  btn-primary">Price</button>
+                                        <input type="number" id="example-input2-group2" name="Price"
+                                            class="form-control" value="{{products.Price}}">
+                                        <span class="input-group-append">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input-group mt-2">
+                                        <span class="input-group-prepend">
+                                            <button type="form" class="btn btn-primary">Description</button>
+                                        </span>
+                                        <input type="text" id="example-input3-group2" name="Description"
+                                            class="form-control" value="{{products.Description}}">
+                                        <span class="input-group-append">
+
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <div><img src="/admin/images/{{products.image.[0]}}" alt="ivde unde"
+                                            style="width:50px ; height:auto" id="imgview">
+                                        <img src="/admin/images/{{products.image.[1]}}" alt="ivde unde"
+                                            style="width:50px ; height:auto" id="imgview">
+                                    </div>
+                                    <div class="input-group mt-2">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input"
+                                                id="inputGroupFile04" onchange="viewimg(event)" multiple>
+                                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+
+
+
+
+                                        </div>
+                                        <div class="input-group-append">
+                                        </div>
+                                    </div>
+                                    <button style="width:200px ;" class="btn btn-outline-primary mt-3"
+                                        type="submit">Update</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Right content here -->
+<script>
+    function viewimg(event){
+        document.getElementById('imgview').src=URL.createObjectURL(event.target.files[0])
+        document.getElementById('imgview').src=URL.createObjectURL(event.target.files[1])
+    }
+</script>

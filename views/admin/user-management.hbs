@@ -1,0 +1,59 @@
+
+        <div class="page-content-wrapper ">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title">User-management</h4>
+
+
+                                <table id="datatable-buttons"
+                                    class="table table-striped table-bordered dt-responsive nowrap"
+                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th style="text-align:center ;">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each userinformation}}
+                                        <tr>
+                                            <td>{{@index}}</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.phonenumber}}</td>
+                                            <td>{{this.email}}</td>
+                                            <td>
+                                                <div style="margin: 0 auto; width: fit-content;">
+                                                    {{#if this.active}}
+                                                    <a href="/admin/user-management/{{this._id}}" style="mar"
+                                                        class="btn btn-outline-info btn-round waves-effect waves-light "><i
+                                                            class="mdi mdi-send mr-2"></i>Block</a>
+                                                    {{else}}
+                                                    <a href="/admin/user-unblock/{{this._id}}"
+                                                        class="btn btn-outline-danger btn-round waves-effect waves-light  mx-auto"><i
+                                                            class="mdi mdi-power mr-2"></i>Unblock</a>
+                                                    {{/if}}
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+            </div><!-- container -->
+
+        </div> <!-- Page content Wrapper -->

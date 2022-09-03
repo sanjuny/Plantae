@@ -1,0 +1,235 @@
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="/user/images/breadcrumb/bg/1-1-1919x388.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">My Account Page</h2>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>My Account</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="account-page-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
+                                href="#account-dashboard" role="tab" aria-controls="account-dashboard"
+                                aria-selected="true">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
+                                role="tab" aria-controls="account-orders" aria-selected="false">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address"
+                                role="tab" aria-controls="account-address" aria-selected="false">Addresses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-logout-tab" href="/user-logout" role="tab"
+                                aria-selected="false">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
+                        <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
+                            aria-labelledby="account-dashboard-tab">
+                            <div class="myaccount-dashboard">
+                                <div class="container">
+                                    <div class="main-body">
+
+                                        <div class="row gutters-sm">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex flex-column align-items-center text-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                alt="Admin" class="rounded-circle" width="150">
+                                                            <div class="mt-3">
+                                                                <p class="text-secondary mb-1">Hello,</p>
+                                                                <h4>{{userinfo.name}}</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">Name :
+                                                                    {{Useraddress.[0].address.name}} {{Useraddress.[0].address.lastname}}
+                                                                </h6>
+
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">Email :
+                                                                    {{Useraddress.[0].address.email}}</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">Mobile :
+                                                                    {{Useraddress.[0].address.number}}</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">Address :
+                                                                    {{Useraddress.[0].address.Address}}</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">PostCode :
+                                                                    {{Useraddress.[0].address.Postcode}}</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">City : {{Useraddress.[0].address.City}}
+                                                                </h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h6 class="mb-0">State :
+                                                                    {{Useraddress.[0].address.State}}</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row  d-flex">
+                                                            <div class="col-sm-12">
+                                                                <a class="btn btn-info" href="/add-address">Add
+                                                                    address</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-orders" role="tabpanel"
+                            aria-labelledby="account-orders-tab">
+                            <div class="myaccount-orders">
+                                <h4 class="small-title">MY ORDERS</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">S.no</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Pincode</th>
+                                                <th scope="col">Mobile</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Payment</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                            {{#each orders}}
+                                            <tr>
+                                                <td><a class="account-order-id" href="#">{{@index}}</a></td>
+                                                {{!-- <td>Mar 27, 2019</td> --}}
+                                                <td>{{this.date}}</td>
+                                                <td>{{this.deliveryDetails.Address}}</td>
+                                                <td>{{this.deliveryDetails.Postcode}}</td>
+                                                <td>{{this.deliveryDetails.Mobile}}</td>
+                                                <td>₹{{this.TotalAmount}}</td>
+                                                <td>{{this.paymentMethod}}</td>
+                                                <td>{{this.status}}</td>
+                                                <td>
+                                                    <a href="/view-products/{{this._id}}"
+                                                        class="btn btn-outline-success btn-round waves-effect waves-light"
+                                                        style="width:100px ;"><i class="mdi mdi-send mr-2"></i>View
+                                                        Products</a>
+                                                    <a href="/cancel-order/{{this._id}}"
+                                                        class="btn btn-outline-danger btn-round waves-effect waves-light mt-2"
+                                                        style="width:100px"
+                                                        onclick="return confirm('Are you want to cancel?')"><i
+                                                            class="mdi mdi-power mr-2"></i>Cancel
+                                                        Order</a>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                            {{!-- <tr>
+                                                <td><a class="account-order-id" href="#">#5356</a></td>
+                                                <td>Mar 27, 2019</td>
+                                                <td>On Hold</td>
+                                                <td>$162.00 for 2 items</td>
+                                                <td><a href="#" class="btn btn-dark"><span>View</span></a>
+                                                </td>
+                                            </tr> --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="tab-pane fade" id="account-address" role="tabpanel"
+                            aria-labelledby="account-address-tab">
+                            <div class="myaccount-address">
+                                {{#each Useraddress}}
+                                <div class="card">
+                                    <div class="card-header">
+    
+                                        {{address.name}},{{address.number}}
+                                    </div>
+                                    <div class="card-body">
+                                        <p>{{address.Address}},{{address.Postcode}}<br>{{address.City}},{{address.State}}
+                                        </p>
+                                <div class="col-sm-12 mt-5">
+                                    <a class="btn btn-info" href="/edit-address">Edit
+                                        address</a>
+                                </div>
+
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
